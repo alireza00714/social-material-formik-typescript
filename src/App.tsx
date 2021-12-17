@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Container, createTheme, ThemeProvider } from "@mui/material"
+import MainContainer from "./components/MainContainer/MainContainer"
+import RTL from "./components/RTL/RTL";
 
 function App() {
+
+  const theme = createTheme({
+    direction: 'rtl',
+    typography: {
+      fontFamily: [
+        'Vazir', 'sans-serif'
+      ].join(','),
+    },
+    palette:{
+      mode: 'dark',
+      primary: {
+        main: '#ffaa2e'
+      },
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RTL>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <Container maxWidth="md">
+            <MainContainer/>
+          </Container>
+        </div>
+      </ThemeProvider>
+    </RTL>
   );
+
 }
 
 export default App;

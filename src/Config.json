@@ -1,0 +1,19 @@
+{
+    "socials": [
+        {
+            "id": 1,
+            "name": "twitter",
+            "farsiName": "توییتر"
+        },
+        {
+            "id": 2,
+            "name": "instagram",
+            "farsiName": "اینستاگرام"
+        },
+        {
+            "id": 3,
+            "name": "telegram",
+            "farsiName": "تلگرام"
+        }
+    ]
+}
