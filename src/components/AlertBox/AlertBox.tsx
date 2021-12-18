@@ -33,10 +33,15 @@ const AlertBox:React.FC<IAlertBoxProps> = (props) => {
                 />
               </DialogContent>
               <DialogActions>
-                <Button color="primary" onClick={() => handleClose()}>انصراف</Button>
+                <Button color="primary" onClick={() => {
+                  handleClose();
+                  setInputValue("");
+                }}>انصراف</Button>
                 <Button color="error" onClick={() => {
-                    if(inputValue === "تایید")
-                        handleDelete(targetId)
+                    if(inputValue === "تایید"){
+                      handleDelete(targetId);
+                      setInputValue("");
+                    }
                 }}>حذف</Button>
               </DialogActions>
             </Dialog>
